@@ -172,7 +172,6 @@ case "$DONGLE_OPTION" in
 esac
 
 echo "Flashing firmware..."
-echo "Executing: $COMMAND"
 eval "$COMMAND"
 
 sleep 5
