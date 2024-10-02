@@ -159,3 +159,4 @@ case $user_choice in
 esac
 
 echo "Backup process completed for the selected dongle."
+rm -rf zb_dongle_backup.sh
