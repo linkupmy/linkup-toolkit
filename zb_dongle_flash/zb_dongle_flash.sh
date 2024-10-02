@@ -44,10 +44,10 @@ download_base_scripts() {
     echo "Downloading base scripts from GitHub..."
     case "$DONGLE_OPTION" in
         1 | 4)
-            curl -L -o "$LOCAL_DIR/base1.py" "https://raw.githubusercontent.com/OmegaMonster/OmegaMonster.github.io/main/zb_firmware/base1.py" || { echo "Failed to download base1.py"; exit 1; }
+            curl -L -o "$LOCAL_DIR/base1.py" "https://raw.githubusercontent.com/linkup-zbtools/tree/main/zb_firmware/base1.py" || { echo "Failed to download base1.py"; exit 1; }
             ;;
         2 | 3)
-            curl -L -o "$LOCAL_DIR/base2.py" "https://raw.githubusercontent.com/OmegaMonster/OmegaMonster.github.io/main/zb_firmware/base2.py" || { echo "Failed to download base2.py"; exit 1; }
+            curl -L -o "$LOCAL_DIR/base2.py" "https://raw.githubusercontent.com/linkup-zbtools/tree/main/zb_firmware/base2.py" || { echo "Failed to download base2.py"; exit 1; }
             ;;
         *)
             echo "Invalid dongle option."
@@ -58,13 +58,13 @@ download_base_scripts() {
 
 declare -A FIRMWARE_URLS
 
-FIRMWARE_URLS["sonoff_dongle_p_coordinator"]="https://raw.githubusercontent.com/OmegaMonster/OmegaMonster.github.io/main/zb_firmware/sonoff_dongle_p/coordinator/CC1352P2_CC2652P_launchpad_coordinator_20230507.hex"
-FIRMWARE_URLS["sonoff_dongle_p_router"]="https://raw.githubusercontent.com/OmegaMonster/OmegaMonster.github.io/main/zb_firmware/sonoff_dongle_p/router/CC1352P2_CC2652P_launchpad_router_20221102.hex"
-FIRMWARE_URLS["sonoff_dongle_e_coordinator"]="https://raw.githubusercontent.com/OmegaMonster/OmegaMonster.github.io/main/zb_firmware/sonoff_dongle_e/coordinator/ncp-uart-hw-v7.4.1.0-zbdonglee-115200.gbl"
-FIRMWARE_URLS["sonoff_dongle_e_router"]="https://raw.githubusercontent.com/OmegaMonster/OmegaMonster.github.io/main/zb_firmware/sonoff_dongle_e/router/router.gbl"
-FIRMWARE_URLS["slzb_07_coordinator"]="https://raw.githubusercontent.com/OmegaMonster/OmegaMonster.github.io/main/zb_firmware/slzb_07/coordinator/ncp-uart-hw-v7.4.1.0-slzb-07-115200.gbl"
-FIRMWARE_URLS["slzb_07p7_coordinator"]="https://raw.githubusercontent.com/OmegaMonster/OmegaMonster.github.io/main/zb_firmware/slzb_07p7/coordinator/CC1352P2_CC2652P_launchpad_coordinator_20230507.hex"
-FIRMWARE_URLS["slzb_07p7_router"]="https://raw.githubusercontent.com/OmegaMonster/OmegaMonster.github.io/main/zb_firmware/slzb_07p7/router/CC1352P2_CC2652P_launchpad_router_20221102.hex"
+FIRMWARE_URLS["sonoff_dongle_p_coordinator"]="https://raw.githubusercontent.com/linkup-zbtools/tree/main/zb_firmware/sonoff_dongle_p/coordinator/CC1352P2_CC2652P_launchpad_coordinator_20230507.hex"
+FIRMWARE_URLS["sonoff_dongle_p_router"]="https://raw.githubusercontent.com/linkup-zbtools/tree/main/zb_firmware/sonoff_dongle_p/router/CC1352P2_CC2652P_launchpad_router_20221102.hex"
+FIRMWARE_URLS["sonoff_dongle_e_coordinator"]="https://raw.githubusercontent.com/linkup-zbtools/tree/main/zb_firmware/sonoff_dongle_e/coordinator/ncp-uart-hw-v7.4.1.0-zbdonglee-115200.gbl"
+FIRMWARE_URLS["sonoff_dongle_e_router"]="https://raw.githubusercontent.com/linkup-zbtools/tree/main/zb_firmware/sonoff_dongle_e/router/router.gbl"
+FIRMWARE_URLS["slzb_07_coordinator"]="https://raw.githubusercontent.com/linkup-zbtools/tree/main/zb_firmware/slzb_07/coordinator/ncp-uart-hw-v7.4.1.0-slzb-07-115200.gbl"
+FIRMWARE_URLS["slzb_07p7_coordinator"]="https://raw.githubusercontent.com/linkup-zbtools/tree/main/zb_firmware/slzb_07p7/coordinator/CC1352P2_CC2652P_launchpad_coordinator_20230507.hex"
+FIRMWARE_URLS["slzb_07p7_router"]="https://raw.githubusercontent.com/linkup-zbtools/tree/main/zb_firmware/slzb_07p7/router/CC1352P2_CC2652P_launchpad_router_20221102.hex"
 
 echo "Select a Dongle Type:"
 echo "1) Sonoff Dongle P"
