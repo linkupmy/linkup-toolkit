@@ -192,4 +192,4 @@ fi
 echo "Flashing process completed."
 
 rm -rf "$ZB_DIR/zb_firmware"
-rm -rf zb_dongle_flash.sh
+rm -rf /tmp/zb_dongle_flash.sh
