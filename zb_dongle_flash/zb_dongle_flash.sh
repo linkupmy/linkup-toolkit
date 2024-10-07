@@ -23,6 +23,10 @@ if ! pip3 show xmodem > /dev/null 2>&1; then
     sudo pip3 install xmodem || { echo "Failed to install xmodem"; exit 1; }
 fi
 
+if ! pip3 show intelhex > /dev/null 2>&1; then
+    sudo pip3 install intelhex || { echo "Failed to install intelhex"; exit 1; }
+fi
+
 usage() {
     echo "Usage: $0"
     echo "Select a dongle and mode using the numeric options provided."
