@@ -115,13 +115,19 @@ main() {
     echo "Connecting to \"$SSID\"..."
     nmcli device wifi connect "$SSID" password "$PASSWORD" > /dev/null 2>&1
 
-    echo ""
-    if [[ $? -eq 0 ]]; then
-        WIFI_IP=$(nmcli -g IP4.ADDRESS dev show | grep -m 1 '^[0-9]' | cut -d'/' -f1)
+    # Wait briefly for connection and IP assignment
+    sleep 5
+
+    # Verify that the network connection is active and matches the desired SSID
+    CURRENT_SSID=$(nmcli -t -f active,ssid dev wifi | grep '^yes' | cut -d':' -f2)
+    WIFI_IP=$(nmcli -g IP4.ADDRESS dev show | grep -m 1 '^[0-9]' | cut -d'/' -f1)
+
+    if [[ "$CURRENT_SSID" == "$SSID" && -n "$WIFI_IP" && "$WIFI_IP" != "127.0.0.1" ]]; then
         echo "Successfully connected to \"$SSID\"!"
         echo "IP address in \"$SSID\" network: $WIFI_IP"
     else
-        echo "Failed to connect to \"$SSID\". Please check your credentials and try again."
+        echo "Failed to connect to \"$SSID\". Either the network is unavailable or the password is incorrect."
+        echo "Please check your credentials and network availability, then try again."
     fi
 
     echo ""
@@ -151,17 +157,14 @@ list_unused_wifi_connections() {
     echo "Listing unused Wi-Fi connections..."
     echo ""
 
-    # List Wi-Fi connections where device is not connected (i.e., device == --)
     mapfile -t unused_wifi_connections < <(nmcli connection show | awk '$3 == "wifi" && $4 == "--" {print $1}')
 
-    # Check if there are any unused Wi-Fi connections
     if [[ ${#unused_wifi_connections[@]} -eq 0 ]]; then
         echo "No unused Wi-Fi connections found."
         restart_network_selection
     fi
 
     echo "Unused Wi-Fi connections:"
-    # Output the unused Wi-Fi connections with numbered list
     for i in "${!unused_wifi_connections[@]}"; do
         echo "$((i+1)).) ${unused_wifi_connections[$i]}"
     done
@@ -175,7 +178,6 @@ list_unused_wifi_connections() {
         restart_network_selection
     fi
 
-    # Check if user input is a valid number and within the range of unused connections
     if [[ "$DELETE_CHOICE" =~ ^[0-9]+$ ]] && (( DELETE_CHOICE >= 1 && DELETE_CHOICE <= ${#unused_wifi_connections[@]} )); then
         SSID_TO_DELETE="${unused_wifi_connections[$((DELETE_CHOICE-1))]}"
         echo "You selected \"$SSID_TO_DELETE\"."
