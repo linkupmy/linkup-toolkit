@@ -64,7 +64,7 @@ declare -A FIRMWARE_URLS
 FIRMWARE_URLS["sonoff_dongle_p_coordinator"]="https://raw.githubusercontent.com/linkupmy/linkup-zbtools/main/zb_firmware/sonoff_dongle_p/coordinator/CC1352P2_CC2652P_launchpad_coordinator_20230507.hex"
 FIRMWARE_URLS["sonoff_dongle_p_router"]="https://raw.githubusercontent.com/linkupmy/linkup-zbtools/main/zb_firmware/sonoff_dongle_p/router/CC1352P2_CC2652P_launchpad_router_20221102.hex"
 FIRMWARE_URLS["sonoff_dongle_e_coordinator"]="https://raw.githubusercontent.com/linkupmy/linkup-zbtools/main/zb_firmware/sonoff_dongle_e/coordinator/ncp-uart-hw-v7.4.4.0-zbdonglee-115200.gbl"
-FIRMWARE_URLS["sonoff_dongle_e_router"]="https://raw.githubusercontent.com/linkupmy/linkup-zbtools/main/zb_firmware/sonoff_dongle_e/router/router.gbl"
+FIRMWARE_URLS["sonoff_dongle_e_router"]="https://raw.githubusercontent.com/linkupmy/linkup-zbtools/main/zb_firmware/sonoff_dongle_e/router/router1.gbl"
 FIRMWARE_URLS["slzb_07_coordinator"]="https://raw.githubusercontent.com/linkupmy/linkup-zbtools/main/zb_firmware/slzb_07/coordinator/ncp-uart-hw-v7.4.1.0-slzb-07-115200.gbl"
 FIRMWARE_URLS["slzb_07p7_coordinator"]="https://raw.githubusercontent.com/linkupmy/linkup-zbtools/main/zb_firmware/slzb_07p7/coordinator/CC1352P2_CC2652P_launchpad_coordinator_20230507.hex"
 FIRMWARE_URLS["slzb_07p7_router"]="https://raw.githubusercontent.com/linkupmy/linkup-zbtools/main/zb_firmware/slzb_07p7/router/CC1352P2_CC2652P_launchpad_router_20221102.hex"
