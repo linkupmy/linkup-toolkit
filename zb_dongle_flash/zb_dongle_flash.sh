@@ -61,7 +61,7 @@ download_base_scripts() {
 
 declare -A FIRMWARE_URLS
 
-FIRMWARE_URLS["sonoff_dongle_p_coordinator"]="https://raw.githubusercontent.com/linkupmy/linkup-zbtools/main/zb_firmware/sonoff_dongle_p/coordinator/CC1352P2_CC2652P_launchpad_coordinator_20230507.hex"
+FIRMWARE_URLS["sonoff_dongle_p_coordinator"]="https://raw.githubusercontent.com/linkupmy/linkup-zbtools/main/zb_firmware/sonoff_dongle_p/coordinator/CC1352P2_CC2652P_launchpad_coordinator_20250321.hex"
 FIRMWARE_URLS["sonoff_dongle_p_router"]="https://raw.githubusercontent.com/linkupmy/linkup-zbtools/main/zb_firmware/sonoff_dongle_p/router/CC1352P2_CC2652P_launchpad_router_20221102.hex"
 FIRMWARE_URLS["sonoff_dongle_e_coordinator"]="https://raw.githubusercontent.com/linkupmy/linkup-zbtools/main/zb_firmware/sonoff_dongle_e/coordinator/ncp-uart-hw-v7.4.5.0-zbdonglee-115200.gbl"
 FIRMWARE_URLS["sonoff_dongle_e_router"]="https://raw.githubusercontent.com/linkupmy/linkup-zbtools/main/zb_firmware/sonoff_dongle_e/router/router1.gbl"
